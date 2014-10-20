@@ -183,7 +183,7 @@ if(isset($_GET["req"]) && !empty($_GET["req"])){
 			if(isset($_GET["code"]) && !empty($_GET["code"])){
 				$code = htmlentities($_GET["code"]);
 
-				$stmt = $bdd->prepare('SELECT CATC.CATC_CODE_PK, CATC.CATC_NOMF, SP.SP_CODE_SQ_PK, SP.SP_NOM, CDF_FO.CDF_NOM AS CDFFO, CDF_VO.CDF_NOM AS CDFVO
+				$stmt = $bdd->prepare('SELECT CATC.CATC_CODE_PK, CATC.CATC_NOMF, SP.SP_CODE_SQ_PK, SP.SP_NOM, SP.SP_CIPUCD, CDF_FO.CDF_NOM AS CDFFO, CDF_VO.CDF_NOM AS CDFVO
 										FROM CATC_CLASSEATC CATC
 										JOIN SP_SPECIALITE SP ON (SP.SP_CATC_CODE_FK = CATC.CATC_CODE_PK
 											AND SP_CDF_SLAB_CODE_FK != 7)
@@ -208,6 +208,7 @@ if(isset($_GET["req"]) && !empty($_GET["req"])){
 							<th>Libellé ATC</th>
 							<th>Code SPE</th>
 							<th>Nom SPE</th>
+							<th>CIP SPE</th>
 							<th>Forme SPE</th>
 							<th>Voie SPE</th>
 						</thead>
@@ -224,6 +225,7 @@ if(isset($_GET["req"]) && !empty($_GET["req"])){
 					echo "<td>".$row['CATC_NOMF']."</td>";
 					echo "<td>".$row['SP_CODE_SQ_PK']."</td>";
 					echo "<td>".$row['SP_NOM']."</td>";
+					echo "<td>".$row['SP_CIPUCD']."</td>";
 					echo "<td>".$row['CDFFO']."</td>";
 					echo "<td>".$row['CDFVO']."</td>";
 					echo "</tr>";
