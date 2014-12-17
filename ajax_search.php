@@ -220,7 +220,7 @@ if(isset($_GET["req"]) && !empty($_GET["req"])){
 					}else{
 						echo "<tr>";
 					}
-					echo "<td><span class='check' data-info='".$row['CATC_CODE_PK']."-".$row['CATC_NOMF']."-".$row['SP_CODE_SQ_PK']."-".$row['SP_NOM']."-".$row['CDFFO']."-".$row['CDFVO']."'></span></td>";
+					echo "<td><span class='check' data-info='".$row['CATC_CODE_PK']."-".$row['CATC_NOMF']."-".$row['SP_CODE_SQ_PK']."-".$row['SP_NOM']."-".$row['SP_CIPUCD']."-".$row['CDFFO']."-".$row['CDFVO']."'></span></td>";
 					echo "<td>".$row['CATC_CODE_PK']."</td>";
 					echo "<td>".$row['CATC_NOMF']."</td>";
 					echo "<td>".$row['SP_CODE_SQ_PK']."</td>";
